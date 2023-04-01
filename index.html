@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практические примеры из руководства</title>
+</head>
+
+<body onload="draw();">
+    <h1>Практические примеры из руководства <a
+            href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial">Руководство по Canvas</a></h1>
+
+    <div>
+        <p style="font-size: 30px;">Прямоугольники: ctxOne.fillRect(10, 10, 50, 50); </p>
+    </div>
+    <canvas id="canvasOne" width="100" height="100"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Треугольники: </p>
+    </div>
+    <canvas id="canvasTwo" width="100" height="100"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Смайлик (дуги): arc(x, y, radius, startAngle, endAngle, anticlockwise)</p>
+    </div>
+    <canvas id="canvasThree" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Практика: пишу Ришат не текстом, а дугами, линиями: </p>
+    </div>
+    <canvas id="canvasFour" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Квадратичные кривые Безье: ctxFive.quadraticCurveTo(25,25,25,62.5);</p>
+    </div>
+    <canvas id="canvasFive" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;"><a
+                href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#path2d_%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B">Path2D
+                объекты: - как переменная, в которой хранится фигура</a></p>
+    </div>
+    <canvas id="canvasSix" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Применение стилей и цветов: ctxSeven.strokeStyle и ctxSeven.fillStyle
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors">
+                источник
+            </a>
+        </p>
+    </div>
+    <canvas id="canvasSeven" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Пример: каскад цветов</p>
+    </div>
+    <canvas id="canvasEight" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Стили линий (толщина, закругленный конец, штрих и т.д.): 
+            .lineCap
+            .lineWidth
+            .lineCap
+            .lineJoin</p>
+    </div>
+    <canvas id="canvasNine" width="500" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Градиенты 
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#%D0%B3%D1%80%D0%B0%D0%B4%D0%B8%D0%B5%D0%BD%D1%82%D1%8B">
+                источник
+            </a>: 
+            let gradient = ctxTen.createLinearGradient(105,105,20,112,120,50);
+            // Добавление трёх контрольных точек
+            gradient.addColorStop(0, 'green');
+            gradient.addColorStop(.5, 'cyan');
+            gradient.addColorStop(1, 'blue');
+        </p>
+    </div>
+    <canvas id="canvasTen" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Шаблоны (паттерны, спрайты, фрагменты) 
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B">
+                источник
+            </a>: 
+            В одном из предыдущих примеров мы использовали несколько циклов, чтобы создать шаблон из повторяющихся изображений. Однако, есть более простой способ сделать подобное - метод createPattern().
+        </p>
+    </div>
+    <canvas id="canvasEleven" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Пример текста с ТЕНЬЮ: 
+            shadowOffsetX
+            shadowOffsetY
+            shadowBlur
+            shadowColor 
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0_%D1%81_%D1%82%D0%B5%D0%BD%D1%8C%D1%8E">
+                источник
+            </a>: 
+            В этом примере рисуется текстовая строка с эффектом затенения.
+        </p>
+    </div>
+    <canvas id="canvasTwelve" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Рисование текста
+            font
+            textBaseline
+            fillText(text, x, y [, maxWidth])
+            strokeText(text, x, y [, maxWidth])
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Drawing_text">
+                источник
+            </a>: 
+            Текст вставлен с использованием текущего fillStyle.
+        </p>
+    </div>
+    <canvas id="canvasThirteen" width="200" height="200"></canvas>
+
+    <div>
+        <p style="font-size: 30px;">Параметры заполнения холста (цветом) - (закарска промежности или полное закаршивание)
+            ctx.fill("evenodd");
+            ctx.fill("nonzero");
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Applying_styles_and_colors#canvas_fill_rules">
+                источник
+            </a>: 
+            В этом примере мы используем правило evenodd. На примре двух окружностей.
+        </p>
+    </div>
+    <canvas id="canvasFourteen" width="200" height="200"></canvas>
+
+
+    <div>
+        <p style="font-size: 30px;">Сохранение и восстановление состояния
+            .save()
+            .restore()
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Transformations#%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F">
+                источник
+            </a>: 
+            В этом примере мы используем правило evenodd. На примре двух окружностей.
+        </p>
+    </div>
+    <canvas id="canvasFifteen" width="200" height="200"></canvas>
+
+
+    <div>
+        <p style="font-size: 30px;">Трансформация: масштабирование (scale(x,y)), поворот (rotate(x,y)) холста
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Transformations#%D0%BC%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">scale(x, y)</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Transformations#%D0%BF%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%82">rotate(angle)</a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Transformations#%D1%81%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B8_%D0%B2%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D1%8F">
+            источник </a>
+            В этом примере мы нарисуем прямоугольники, используя разные масштабные коэффициенты.
+        </p>
+    </div>
+    <canvas id="canvasSixteen" width="200" height="200"></canvas>
+    
+    <div>
+        <p style="font-size: 30px;">Композиция и обрезка: globalCompositeOperation
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Compositing">
+            источник </a>
+            ctxSeventeen.globalCompositeOperation = "multiply/source-over/source-in/source-out" - другие занчения в таблице раздела
+        </p>
+    </div>
+    <canvas id="canvasSeventeen" width="200" height="200"></canvas>
+
+
+    <div>
+        <p style="font-size: 30px;">Обрезка контуров
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Compositing#%D0%BE%D0%B1%D1%80%D0%B5%D0%B7%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%82%D1%83%D1%80%D0%BE%D0%B2">
+            источник </a>
+            Вырезанные звездочки на сини-белом фоне
+        </p>
+    </div>
+    <canvas id="canvasEighteen" width="300" height="300"></canvas>
+    
+    
+    <div>
+        <p style="font-size: 30px;">Простые анимации (window.requestAnimationFrame() - цикл с количеством итераций частоты монитора, обычно 60)
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations">
+            источник </a>
+            <a href="https://developer.mozilla.org/ru/docs/Web/API/Canvas_API/Tutorial/Basic_animations#%D0%B0%D0%BD%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0">Анимированная солнечная система</a>
+        </p>
+    </div>
+    <canvas id="canvasNineteen" width="300" height="300"></canvas>
+
+    
+    <script src="script.js"></script>
+   
+    <script type="text/javascript">
+        // (что не работает, лаан)Чтобы страница спускалась ВНИЗ при загрузке: https://learn.javascript.ru/size-and-scroll-window
+        let scrollHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.body.clientHeight, document.documentElement.clientHeight
+        );
+        window.scrollBy(0, 100)
+    </script>
+</body>
+
+</html>
